@@ -1,0 +1,14 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Secured</title>
+
+<h1>Secured page</h1>
+<p th:text="${#httpServletRequest.remoteUser}">Győző</p>
+
+Logged in user: <span sec:authentication="name">Győző</span> |					
+Roles: <span sec:authentication="principal.authorities"></span>
+    
+    
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
